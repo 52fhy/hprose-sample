@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/hprose/hprose-golang/rpc"
+	"sample/service"
 	"testing"
 )
 
@@ -13,7 +14,7 @@ func TestSampleService_GetUserInfo(t *testing.T) {
 	client := GetClient()
 
 	defer client.Close()
-	var comment SampleService
+	var comment service.SampleService
 	client.UseService(&comment, "Sample")
 
 	rep := comment.GetUserInfo(10001)
@@ -23,4 +24,3 @@ func TestSampleService_GetUserInfo(t *testing.T) {
 		t.Log(rep.Data)
 	}
 }
-
