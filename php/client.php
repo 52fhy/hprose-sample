@@ -6,7 +6,7 @@ include "vendor/autoload.php";
  * @return SampleService
  * @throws Exception
  */
-function getCLient()
+function getClient()
 {
     $TcpServerAddr = "tcp://127.0.0.1:8050";
     $client = \Hprose\Socket\Client::create($TcpServerAddr, false);
@@ -15,7 +15,7 @@ function getCLient()
 }
 
 try {
-    $client = getCLient();
+    $client = getClient();
     $rep = $client->GetUserInfo(10);
     echo $rep->errCode . PHP_EOL;
     print_r($rep);
