@@ -1,4 +1,4 @@
 .idea
 main
 logs/
-php/vendor
+php/vendor/

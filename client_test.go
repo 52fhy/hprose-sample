@@ -41,7 +41,7 @@ func TestHello(t *testing.T) {
 	client.UseService(&stub)
 
 	rep := stub.Hello("func")
-	if rep != "" {
+	if rep == "" {
 		t.Error(rep)
 	} else {
 		t.Log(rep)
