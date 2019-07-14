@@ -19,9 +19,17 @@ func main() {
 	protocol := flag.String("P", "tcp", "the protocol, such as tcp,http")
 	flag.Parse()
 
+	//初始化配置
 	err := util.InitConfig(*configFile)
 	if err != nil {
 		fmt.Printf("load config file fail, err:%v\n", err)
+		return
+	}
+
+	//初始化日志
+	err = util.InitLog()
+	if err != nil {
+		fmt.Printf("init log fail, err:%v\n", err)
 		return
 	}
 

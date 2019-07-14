@@ -24,7 +24,7 @@ func TestSampleService_GetUserInfo(t *testing.T) {
 	var stub clientStub
 	client.UseService(&stub, "Sample") //使用命名空间
 
-	rep := stub.GetUserInfo(10001)
+	rep := stub.GetUserInfo(-10001)
 	if rep.ErrCode > 0 {
 		t.Error(rep.ErrMsg)
 	} else {
